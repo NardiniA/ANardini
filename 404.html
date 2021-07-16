@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Page Not Found - 404</title>
+
+    <link rel="shortcut icon" href="assets/icons/16px/icon.png" type="image/png" />
+    <link rel="icon" href="assets/icons/16px/icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="robots" href="./robots.txt" />
+    <link rel="humans" href="./humans.txt" />
+    <link rel="sitemap" href="" />
+    <link rel="theme-color" href="#6666CC" />
+
+    <!--==================== MAIN CSS ====================-->
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .main_container {
+            grid-template-columns: auto;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .main_container div {
+            margin-bottom: 3rem;
+        }
+
+        .main_container div:last-child {
+            margin-bottom: 0;
+        }
+
+        .main_container h1 {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">NardiniA</a>
+            <a href="index.html" class="nav__logo">Home</a>
+        </nav>
+    </header>
+
+    <div class="section container grid main_container">
+        <div>
+            <h1>Page Not Found</h1>
+            <p>We couldn't find what you were looking for.</p>
+        </div>
+        <div>
+            <img src="assets/img/404.svg" alt="" />
+        </div>
+        <div>
+            <a href="index.html" class="button">
+                <i class="uil uil-arrow-left"></i> 
+                Back to Home
+            </a>
+        </div>
+    </div>
+    
+    <!--==================== THEME JS ====================-->
+    <script src="assets/js/theme.min.js"></script>
+</body>
+</html>

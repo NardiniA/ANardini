@@ -1,0 +1,47 @@
+{
+  "short_name": "NardiniA Portfolio",
+  "name": "Portfolio of Antonio Nardini",
+  "icons": [{
+    "src": "assets/icons/16px/icon.png",
+    "type": "image/png",
+    "sizes": "16x16"
+  },
+  {
+    "src": "assets/icons/48px/icon.png",
+    "type": "image/png",
+    "sizes": "48x48"
+  },
+  {
+    "src": "assets/icons/72px/icon.png",
+    "type": "image/png",
+    "sizes": "72x72"
+  },
+  {
+    "src": "assets/icons/144px/icon.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  },
+  {
+    "src": "assets/icons/192px/icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "assets/icons/256px/icon.png",
+    "type": "image/png",
+    "sizes": "256x256"
+  },
+  {
+    "src": "assets/icons/384px/icon.png",
+    "type": "image/png",
+    "sizes": "384x384"
+  },
+  {
+    "src": "assets/icons/512px/icon.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "start_url": "/",
+  "background_color": "#fbfbfe",
+  "theme_color": "#6666CC"
+}

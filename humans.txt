@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Antonio Nardini -- Designer and Developer
+
+# THANKS
+
+    Antonio Nardini
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Modernizr, Swiperjs, Unicons

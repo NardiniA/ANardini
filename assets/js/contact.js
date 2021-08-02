@@ -1,4 +1,4 @@
-function ValidateForm(event) {
+document.querySelector('form.contact__form').addEventListener('submit', (event) => {
     // Prevent From Submitting
     event.preventDefault();
 
@@ -46,45 +46,35 @@ function ValidateForm(event) {
     removeErrors(form);
 
     if (data.every(input => { if (!input.valid) return false; else return true; })) {
-        // Send to Backend
-        console.log("Send to backend");
-        const formData = JSON.stringify({ 'name': data[0].value, 'email': data[1].value, 'subject': data[2].value, 'message': data[3].value });
-        fetch('assets/mail/contact.inc.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log("Result");
-            console.log(result);
+        const formData = { name: data[0].value, email: data[1].value, subject: data[2].value, message: data[3].value };
+        // Change to Loading Btn
+        document.querySelector('button[type=submit]').innerHTML = 'Loading... <i class="uil uil-message button__icon"></i>';
 
-            if (result.length === 2) {
-                showAlert(result);
-            } else if (result.length === 4) {
-                showErrors(result);
-            }
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                service_id: "service_562kegs",
+                template_id: "template_2owpp5u",
+                user_id: "user_pwnrSymGTUtZ4MVyEqwmT",
+                template_params: formData
+            })
+        })
+        .then(response => response.text())
+        .then(result => {
+            // Change Loading Btn
+            document.querySelector('button[type=submit]').innerHTML = 'Send Message <i class="uil uil-message button__icon"></i>';
+
+            // Show Email Result
+            removeErrors(form);
+            showAlert(result);
         })
         .catch(error => {
-            console.log(error);
+            // Show Errors
+            console.log("Oops... " + error);
         });
-        // fetch('assets/mail/contact.inc.php', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({ 'name': "a", 'email': "tionard710@gmail.com", 'subject': 'Hello World', 'message': 'Message' })
-        // })
-        // .then(response => response.json())
-        // .then(result => {
-        //     console.log("Result");
-        //     console.log(result);
-        // })
-        // .catch(error => {
-        //     console.log(error);
-        // });
     } else {
         // Display Errors
         showErrors(data);
@@ -92,7 +82,7 @@ function ValidateForm(event) {
 
     // Prevent from submitting
     event.preventDefault();
-}
+});
 
 function removeErrors(form) {
     form.querySelectorAll('.contact__error-border').forEach(div => {
@@ -121,12 +111,12 @@ function showErrors(data) {
 
 function showAlert(data) {
     let alert = document.querySelector('.alert');
-    if (data[0] === 502) {
+    if (data === "Fail" || data === 400 || data === {}) {
         alert.classList.add("error", "show-alert");
-        alert.querySelector('span').textContent = data[1];
-    } else if (data[0] === 200) {
+        alert.querySelector('span').textContent = "Unable to send Email!";
+    } else if (data === "OK" || data === 200) {
         alert.classList.add("success", "show-alert");
-        alert.querySelector('span').textContent = data[1];
+        alert.querySelector('span').textContent = "Email Sent!";
     }
 }
 

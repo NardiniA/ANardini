@@ -23,10 +23,10 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
-    --error-color: hsl(0, 69%, 61%);
-    --error-color-lighter: hsl(0, 92%, 85%);
-    --success-color: hsl(120, 69%, 61%);
-    --success-color-lighter: hsl(120, 92%, 85%);
+    --error-color: hsl(0, 31%, 61%);
+    --error-color-lighter: hsl(0, 45%, 85%);
+    --success-color: hsl(120, 31%, 61%);
+    --success-color-lighter: hsl(120, 45%, 85%);
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -88,8 +88,8 @@ body.dark-theme {
     --body-color: hsl(var(--hue-color), 28%, 12%);
     --container-color: hsl(var(--hue-color), 29%, 16%);
 
-        --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-        --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -1154,6 +1154,30 @@ select:-webkit-autofill:focus {
 .show-scroll {
     bottom: 5rem;
     opacity: .8;
+}
+
+/*========== NOSCRIPT ==========*/
+
+.alert-noscript {
+    position: fixed;
+    top: var(--mb-3);
+    margin-top: var(--mb-2);
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-tooltip);
+}
+
+.alert-noscript div {
+    padding: var(--mb-1);
+    border: 2px solid var(--error-color);
+    background-color: var(--error-color-lighter);
+    color: var(--error-color);
+    font-weight: var(--font-semi-bold);
+    text-align: center;
+    border-radius: 8px;
 }
 
 /*========== SCROLL BAR ==========*/

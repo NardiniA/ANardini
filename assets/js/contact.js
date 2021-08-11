@@ -48,7 +48,7 @@ document.querySelector('form.contact__form').addEventListener('submit', (event) 
     if (data.every(input => { if (!input.valid) return false; else return true; })) {
         const formData = { name: data[0].value, email: data[1].value, subject: data[2].value, message: data[3].value };
         // Change to Loading Btn
-        document.querySelector('button[type=submit]').innerHTML = 'Loading... <i class="uil uil-message button__icon"></i>';
+        document.querySelector('button[type=submit]').innerHTML = '<div class="donut"></div>';
 
         fetch('https://api.emailjs.com/api/v1.0/email/send', {
             method: "POST",
@@ -64,12 +64,14 @@ document.querySelector('form.contact__form').addEventListener('submit', (event) 
         })
         .then(response => response.text())
         .then(result => {
-            // Change Loading Btn
-            document.querySelector('button[type=submit]').innerHTML = 'Send Message <i class="uil uil-message button__icon"></i>';
-
             // Show Email Result
             removeErrors(form);
             showAlert(result);
+
+            setTimeout(() => {
+                // Change Loading Btn
+                document.querySelector('button[type=submit]').innerHTML = 'Send Message <i class="uil uil-message button__icon"></i>';
+            }, 3000)
         })
         .catch(error => {
             // Show Errors
@@ -117,6 +119,8 @@ function showAlert(data) {
     } else if (data === "OK" || data === 200) {
         alert.classList.add("success", "show-alert");
         alert.querySelector('span').textContent = "Email Sent!";
+        // Success
+        document.querySelector('button[type=submit]').innerHTML = 'Sent! <i class="uil uil-check button__icon"></i>';
     }
 }
 

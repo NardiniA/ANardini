@@ -1046,6 +1046,54 @@ img {
     border: 2px solid var(--error-color);
 }
 
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--title-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 1.5rem;
+  animation: donut-spin 1.2s linear infinite;
+  transition: all .4s;
+}
+
 /* Remove AutoFill Styling */
 
 input:-webkit-autofill,

@@ -514,15 +514,23 @@ img {
 }
 
 .skills__html {
-    width: 95%;
+    width: 100%;
 }
 
 .skills__css {
-    width: 85%;
+    width: 90%;
 }
 
 .skills__js {
+    width: 90%;
+}
+
+.skills__react {
     width: 75%;
+}
+
+.skills__express {
+    width: 90%;
 }
 
 .skills__python {
@@ -534,7 +542,7 @@ img {
 }
 
 .skills__aws{
-    width: 55%;
+    width: 75%;
 }
 
 .skills__apple {

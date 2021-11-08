@@ -132,6 +132,9 @@ const helpBtns = document.querySelectorAll('.help__button'),
 helpBtns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         helpBtns[index].classList.toggle('show-help');
+        setTimeout(() => {
+            helpBtns[index].classList.remove('show-help');
+        }, 3000);
     });
 });
 

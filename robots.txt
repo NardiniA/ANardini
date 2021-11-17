@@ -2,5 +2,6 @@
 
 # Allow crawling of all content
 User-agent: *
-Disallow:
-Sitemap: 
+Disallow: /terms.html
+Disallow: /privacy.html
+Sitemap: https://antonionardini.com/sitemap.xml

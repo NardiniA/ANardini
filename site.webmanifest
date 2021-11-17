@@ -1,47 +1,90 @@
 {
-  "short_name": "NardiniA Portfolio",
+  "short_name": "ANardini",
   "name": "Portfolio of Antonio Nardini",
   "icons": [{
-    "src": "assets/icons/16px/icon.png",
+    "src": "/favicon.ico",
+    "type": "image/x-icon",
+    "sizes": "16x16"
+  },
+  {
+    "src": "/favicon-16x16.png",
     "type": "image/png",
     "sizes": "16x16"
   },
   {
-    "src": "assets/icons/48px/icon.png",
+    "src": "/favicon-32x32.png",
     "type": "image/png",
-    "sizes": "48x48"
+    "sizes": "32x32"
   },
   {
-    "src": "assets/icons/72px/icon.png",
+    "src": "/favicon-48x48.png",
     "type": "image/png",
-    "sizes": "72x72"
+    "sizes": "48x48",
+    "purpose": "any maskable"
   },
   {
-    "src": "assets/icons/144px/icon.png",
-    "type": "image/png",
-    "sizes": "144x144"
+		"src": "/favicon-72x72.png",
+		"type": "image/png",
+		"sizes": "72x72",
+		"purpose": "any maskable"
   },
   {
-    "src": "assets/icons/192px/icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
+		"src": "/favicon-96x96.png",
+		"type": "image/png",
+		"sizes": "96x96",
+		"purpose": "any maskable"
   },
   {
-    "src": "assets/icons/256px/icon.png",
-    "type": "image/png",
-    "sizes": "256x256"
+		"src": "/favicon-128x128.png",
+		"type": "image/png",
+		"sizes": "128x128",
+		"purpose": "any maskable"
   },
   {
-    "src": "assets/icons/384px/icon.png",
-    "type": "image/png",
-    "sizes": "384x384"
+		"src": "/apple-touch-icon.png",
+		"type": "image/png",
+		"sizes": "180x180",
+		"purpose": "any maskable"
   },
   {
-    "src": "assets/icons/512px/icon.png",
-    "type": "image/png",
-    "sizes": "512x512"
+		"src": "/android-chrome-192x192.png",
+		"type": "image/png",
+		"sizes": "192x192",
+		"purpose": "any maskable"
+  },
+  {
+		"src": "/favicon-384x384.png",
+		"type": "image/png",
+		"sizes": "384x384",
+		"purpose": "any maskable"
+  },
+  {
+		"src": "/android-chrome-512x512.png",
+		"type": "image/png",
+		"sizes": "512x512",
+		"purpose": "any maskable"
   }],
   "start_url": "/",
+  "display": "standalone",
+  "scope": "/",
   "background_color": "#fbfbfe",
-  "theme_color": "#6666CC"
+  "theme_color": "#6E57E0",
+  "shortcuts": [{
+    "name": "Antonio Nardini's Portfolio",
+    "short_name": "ANardini",
+    "description": "View Antonio Nardini's Website Portfolio",
+    "url": "/",
+    "icons": [{
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192"
+    }]
+  }],
+  "description": "Antonio Nardini's Website Portfolio",
+  "screenshots": [
+    {
+      "src": "https://d33wubrfki0l68.cloudfront.net/6194fdea2cac0b00080436db/screenshot_2021-11-17-13-04-47-0000.png",
+      "type": "image/png",
+      "sizes": "960x600"
+    }
+  ]
 }

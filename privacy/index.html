@@ -8,15 +8,15 @@
 
     <title>Privacy Policy - Antonio Nardini</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
-    <link rel="robots" href="/robots.txt" />
-    <link rel="humans" href="/humans.txt" />
-    <link rel="sitemap" href="/sitemap.xml" />
+    <link rel="robots" href="robots.txt" />
+    <link rel="humans" href="humans.txt" />
+    <link rel="sitemap" href="sitemap.xml" />
     <meta name="theme-color" content="#6E57E0"/>
 
     <!--==================== MAIN CSS ====================-->
@@ -42,7 +42,26 @@
     <header class="header">
         <nav class="nav container">
             <a href="/" class="nav__logo">NardiniA</a>
-            <a href="/" class="nav__logo">Home</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -83,8 +102,24 @@
 
         <h2>Cookies</h2>
         
-        <p>This website does <strong>Not</strong> use Cookies to collect information. Any cookies present on this website are for security reasons and do <strong>Not</strong> collect personal data/information. Any information collected by this website is as a result of forms on this website (Example: Contact Form).</p>
+        <p>This website <a href="https://antonionardini.com">(antonionardini.com)</a> does <strong>not</strong> Cookies.</p>
+        
+        <p>However, it does use the localStorage facility to ask the user for permission to collect "Personal Information". This includes: language, 
+            screen size, screen color depth, device information (operating system, version, etc), browser information (size, version, name). 
+            A full list of the information collected can be viewed at <a href="https://docs.ackee.electerious.com/#/docs/Anonymization">Ackee Docs</a>. 
+        </p>
 
+        <h2>Analytics</h2>
+
+        <p>To get information about the behavior of our visitors and website, we use <a href="https://ackee.electerious.com" target="_blank" 
+            rel="noopener noreferrer">Ackee</a>. This analytics software gives us insight about our visitors as it identifies key information about 
+            the device and browser the user is using. This is used only to continue developing the website to your benefit.</p>
+            
+        <p><strong>No information is passed on or sold.</strong></p>
+
+        <p><a href="https://docs.ackee.electerious.com/#/docs/Anonymization" target="_blank" rel="noopener noreferrer">Go to Ackee 
+            documentation</a> to find out what is collected.</p>
+        
         <h2>Security</h2>
 
         <p>The security of your Personal Information is important to us, but remember that no method of electronic transmisson over
@@ -115,13 +150,13 @@
     
                 <ul class="footer__links">
                     <li>
-                        <a href="/#services" class="footer__link">Services</a>
+                        <a href="/index.html#services" class="footer__link">Services</a>
                     </li>
                     <li>
-                        <a href="/#portfolio" class="footer__link">Portfolio</a>
+                        <a href="/index.html#portfolio" class="footer__link">Portfolio</a>
                     </li>
                     <li>
-                        <a href="/#contact" class="footer__link">Contact</a>
+                        <a href="/index.html#contact" class="footer__link">Contact</a>
                     </li>
                 </ul>
     
@@ -158,13 +193,29 @@
     
     </footer>
 
-    <!--==================== THEME JS ====================-->
-    <script src="https://cdn.antonionardini.com/anardini/js/theme.min.js"></script>
+    <div class="modal" id="consent">
+        <div class="modal-content">
+            <h4 class="modal-title">Analytics</h4>
+            <i class="uil uil-times modal-close"></i>
 
-    <!--==================== PRELOADER JS ====================-->
+            <p class="modal-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, iusto necessitatibus distinctio ex 
+                quaerat quos recusandae voluptate itaque sint pariatur molestiae doloremque repudiandae adipisci 
+                dignissimos?</p>
+            <a href="#" class="button modal-btn-accept modal-btn">Accept</a>
+            <a href="#" class="button modal-btn-decline modal-btn">Decline</a>
+        </div>
+    </div>
+
+    <!--==================== PRELOADER JS =====================-->
     <script src="https://cdn.antonionardini.com/anardini/js/preloader.min.js"></script>
 
+    <!--==================== MODERNIZR JS =====================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
     <!--==================== ACKEE JS ====================-->
-    <script async src="https://admin.antonionardini.com/tracker.js" data-ackee-server="https://admin.antonionardini.com" data-ackee-domain-id="4b70428b-b19c-4cf6-a203-9538ec35379c"></script>
+    <script src="https://admin.antonionardini.com/tracker.js"></script>
+    
+    <!--==================== ALL JS ====================-->
+    <script src="https://cdn.antonionardini.com/anardini/js/all.min.js"></script>
 </body>
 </html>

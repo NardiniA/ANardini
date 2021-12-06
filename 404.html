@@ -19,7 +19,8 @@
     <meta name="theme-color" content="#6E57E0"/>
 
     <!--==================== MAIN CSS ====================-->
-    <link rel="stylesheet" href="https://cdn.antonionardini.com/anardini/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.antonionardini.com/anardini/css/preloader.min.css" />
+    <link rel='stylesheet' href='https://cdn.antonionardini.com/anardini/css/all.min.css' />
 
     <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
@@ -53,10 +54,39 @@
     </style>
 </head>
 <body>
+    <!--==================== PRELOADER ====================-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="outer"></div>
+            <div class="middle"></div>
+            <div class="inner"></div>
+        </div>
+    </div>
+
+    <!--==================== HEADER ====================-->
     <header class="header">
         <nav class="nav container">
             <a href="/" class="nav__logo">NardiniA</a>
-            <a href="/" class="nav__logo">Home</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
         </nav>
     </header>
     
@@ -81,11 +111,30 @@
             </a>
         </div>
     </div>
-    
-    <!--==================== THEME JS ====================-->
-    <script src="https://cdn.antonionardini.com/anardini/js/theme.min.js"></script>
+
+    <div class="modal" id="consent">
+        <div class="modal-content">
+            <h4 class="modal-title">Analytics</h4>
+            <i class="uil uil-times modal-close"></i>
+
+            <p class="modal-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, iusto necessitatibus distinctio ex 
+                quaerat quos recusandae voluptate itaque sint pariatur molestiae doloremque repudiandae adipisci 
+                dignissimos?</p>
+            <a href="#" class="button modal-btn-accept modal-btn">Accept</a>
+            <a href="#" class="button modal-btn-decline modal-btn">Decline</a>
+        </div>
+    </div>
+
+    <!--==================== PRELOADER JS =====================-->
+    <script src="https://cdn.antonionardini.com/anardini/js/preloader.min.js"></script>
+
+    <!--==================== MODERNIZR JS =====================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <!--==================== ACKEE JS ====================-->
-    <script async src="https://admin.antonionardini.com/tracker.js" data-ackee-server="https://admin.antonionardini.com" data-ackee-domain-id="4b70428b-b19c-4cf6-a203-9538ec35379c"></script>
+    <script src="https://admin.antonionardini.com/tracker.js"></script>
+    
+    <!--==================== ALL JS ====================-->
+    <script src="https://cdn.antonionardini.com/anardini/js/all.min.js"></script>
 </body>
 </html>

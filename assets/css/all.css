@@ -1,5 +1,5 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
@@ -323,6 +323,99 @@ img {
 .button--link:hover {
     background-color: transparent;
     color: var(--first-color-alt);
+}
+
+/*==================== MODAL ====================*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.modal-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    cursor: pointer;
+}
+
+.modal-icon {
+    color: var(--first-color);
+    margin-right: var(--mb-0-25);
+}
+
+/* Active Modal */
+.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-p {
+    margin-bottom: var(--mb-1-5);
+}
+
+.modal-btn {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    margin-right: var(--mb-0-75);
+}
+
+.modal-btn-accept {
+    background-color: #67C63B;
+}
+
+.modal-btn-accept:hover {
+    background-color: #55a630;
+}
+
+.modal-btn-decline {
+    background-color: #E95557;
+}
+
+.modal-btn-decline:hover {
+    background-color: #e5383b;
+}
+
+.modal-btn:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 350px) {
+    .modal {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        width: 450px;
+    }
 }
 
 /*==================== FOOTER ====================*/

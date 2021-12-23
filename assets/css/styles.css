@@ -176,7 +176,8 @@ img {
     z-index: var(--z-modal);
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .modal-content {
@@ -313,7 +314,8 @@ img {
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0,0,0,.15);
         border-radius: 1.5rem 1.5rem 0 0;
-        transition: .3s;
+        transition-duration: .3s;
+        -webkit-transition-duration: .3s;
     }
 }
 
@@ -427,7 +429,8 @@ img {
 
 .home__scroll-button {
     color: var(--first-color);
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .home__scroll-button:hover {
@@ -468,7 +471,8 @@ img {
 .button__icon {
     font-size: 1.25rem;
     margin-left: var(--mb-0-5);
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .button--white {
@@ -573,7 +577,8 @@ img {
 
 .skills__arrow {
     margin-left: auto;
-    transition: .4s;
+    transition-duration: .4s;
+    -webkit-transition-duration: .4s;
 }
 
 .skills__list {
@@ -752,7 +757,8 @@ img {
     padding: 3.5rem 5rem 1.25rem 1.5rem;
     border-radius: .25rem;
     box-shadow: 0 2px 4px rgba(0,0,0,.15);
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .services__content:hover {
@@ -795,7 +801,8 @@ img {
     z-index: var(--z-modal);
     opacity: 0;
     visibility: hidden;
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .services__modal-content {
@@ -1050,7 +1057,8 @@ img {
     text-align: center;
     font-size: 14px;
     line-height: 1.2;
-    transition: all .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .help__button.show-help::after {
@@ -1079,7 +1087,8 @@ img {
     color: var(--error-color);
     display: none;
     opacity: 0;
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .contact__error.show-error {
@@ -1102,7 +1111,8 @@ img {
     opacity: 0;
     visibility: hidden;
     display: none;
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
 }
 
 .show-help {
@@ -1121,7 +1131,8 @@ img {
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
     display: none;
-    transition: .3s;
+    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -1184,15 +1195,16 @@ img {
 }
 
 .donut {
-  display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: var(--title-color);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  margin: 0 1.5rem;
-  animation: donut-spin 1.2s linear infinite;
-  transition: all .4s;
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--title-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 1.5rem;
+    animation: donut-spin 1.2s linear infinite;
+    transition-duration: .4s;
+    -webkit-transition-duration: .4s;
 }
 
 /* Remove AutoFill Styling */
@@ -1288,7 +1300,8 @@ select:-webkit-autofill:focus {
     padding: 0 .3rem;
     border-radius: .4rem;
     z-index: var(--z-tooltip);
-    transition: .4s;
+    transition-duration: .4s;
+    -webkit-transition-duration: .4s;
 }
 
 .scrollup:hover {

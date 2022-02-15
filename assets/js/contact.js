@@ -50,33 +50,34 @@ document.querySelector('form.contact__form').addEventListener('submit', (event) 
         // Change to Loading Btn
         document.querySelector('button[type=submit]').innerHTML = '<div class="donut"></div>';
 
-        fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                service_id: "service_562kegs",
-                template_id: "template_2owpp5u",
-                user_id: "user_pwnrSymGTUtZ4MVyEqwmT",
-                template_params: formData
-            })
-        })
-        .then(response => response.text())
-        .then(result => {
-            // Show Email Result
-            removeErrors(form);
-            showAlert(result);
+        fetch("https://api.emailjs.com/api/v1.0/email/send", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				service_id: "service_o6es46p",
+				template_id: "template_2owpp5u",
+				user_id: "user_pwnrSymGTUtZ4MVyEqwmT",
+				template_params: formData,
+			}),
+		})
+			.then((response) => response.text())
+			.then((result) => {
+				// Show Email Result
+				removeErrors(form);
+				showAlert(result);
 
-            setTimeout(() => {
-                // Change Loading Btn
-                document.querySelector('button[type=submit]').innerHTML = 'Send Message <i class="uil uil-message button__icon"></i>';
-            }, 3000)
-        })
-        .catch(error => {
-            // Show Errors
-            console.log("Oops... " + error);
-        });
+				setTimeout(() => {
+					// Change Loading Btn
+					document.querySelector("button[type=submit]").innerHTML =
+						'Send Message <i class="uil uil-message button__icon"></i>';
+				}, 3000);
+			})
+			.catch((error) => {
+				// Show Errors
+				console.log("Oops... " + error);
+			});
     } else {
         // Display Errors
         showErrors(data);

@@ -1831,6 +1831,7 @@
                 items.forEach(item => {
                     item.addEventListener('click', () => {
                         root.style.setProperty('--hue-color', item.getAttribute('data-hue'));
+                        document.querySelector('meta[name="theme-color"]').setAttribute('content', `hsl(${item.getAttribute('data-hue')}, 69%, 61%)`);
                         items.forEach(i => i.classList.remove("active"));
                         item.classList.add("active");
                     });

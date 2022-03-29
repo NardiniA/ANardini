@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!--==================== UNICONS ====================-->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+        
+        <!--==================== SWIPER CSS ====================-->
+        <link rel="stylesheet" href="https://cdn.antonionardini.com/anardini/css/swiper-bundle.min.css" />
+        
+        <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="https://cdn.antonionardini.com/anardini/css/styles.min.css" />
+        <link rel="stylesheet" href="https://cdn.antonionardini.com/anardini/css/preloader.min.css" />
+
+        <!-- favicons
+        ================================================== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
+        <link rel="robots" href="robots.txt" />
+        <link rel="humans" href="humans.txt" />
+        <link rel="sitemap" href="sitemap.xml" />
+        <meta name="theme-color" content="#6E57E0"/>
+
+        <!--==================== META TAGS ====================-->
+        <meta name="keywords" content="frontend, backend, full stack, websites, portfolio, web developer, web design" />
+        <meta name="author" content="Antonio Nardini" />
+        <meta name="publisher" content="Antonio Nardini" />
+        <meta name="description" content="Portfolio of Antonio Nardini" />
+        <meta name="page-topic" content="Websites" />
+        <meta name="page-type" content="Portfolio" />
+        <meta name="audience" content="Everyone" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- HTTP-EQUIV META -->
+        <meta http-equiv="content-language" content="en" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <!-- OG META TAGS -->
+        <meta property="og:title" content="Antonio Nardini - Full Stack Developer" />
+        <meta property="og:description" content="Portfolio of Antonio Nardini" />
+        <meta property="og:url" content="https://antonionardini.com" />
+        <meta property="og:image" content="https://cdn.antonionardini.com/anardini/img/portfolio3.jpg" />
+        <meta property="og:site_name" content="Antonio Nardini's Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_GB" />
+
+        <!-- TWITTER META TAGS -->
+        <meta name="twitter:title" content="Antonio Nardini - Full Stack Developer" />
+        <meta name="twitter:description" content="Portfolio of Antonio Nardini" />
+        <meta name="twitter:image" content="https://cdn.antonionardini.com/anardini/img/portfolio3.jpg" />
+        <meta name="twitter:image:alt" content="Devices on desk ready to start development" />
+        <meta name="twitter:card" content="summary" />
+
+        <title>Antonio Nardini - Full Stack Developer</title>
+
+        <style>
+            .banner {
+                padding: 100px 0 80px;
+                background-color: var(--first-color);
+                color: #fff;
+                text-align: center;
+            }
+
+            @media (min-width: 768px) {
+                .banner {
+                    padding-top: 170px;
+                }
+            }
+
+            .banner__title {
+                font-size: var(--big-font-size);
+                line-height: 1.4;
+                color: #fff;
+            }
+
+            .banner__subtitle {
+                display: block;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: var(--small-font-size);
+                line-height: 1.6;
+                margin: var(--mb-0-75) 0 0;
+            }
+
+            .settings-panel {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                padding: 3.5rem 3rem;
+                background-color: var(--container-color);
+                z-index: var(--z-fixed);
+                max-width: 255px;
+                width: 100%;
+                transform: translateX(100%);
+                transform-origin: center;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
+                transition-delay: 0s;
+            }
+
+            @media (min-width: 540px) {
+                .settings-panel {
+                    max-width: 450px;
+                }
+            }
+
+            .settings-panel.opened {
+                transform: translateX(0);
+                box-shadow: -4px 0 8px rgba(0,0,0,.15);
+            }
+
+            .settings__title {
+                display: block;
+                font-size: var(--h2-font-size);
+                color: var(--title-color);
+                margin-bottom: var(--mb-0-5);
+            }
+
+            .settings__subtitle {
+                display: block;
+                font-size: var(--small-font-size);
+                margin-bottom: var(--mb-2);
+            }
+
+            .settings__grid {
+                grid-template-columns: repeat(auto-fit, 24px);
+            }
+
+            .settings__item {
+                width: 24px;
+                height: 24px;
+                border: none;
+                background-color: hsl(var(--hue-color), 69%, 61%);
+                padding: 0;
+                margin: 0;
+                border-radius: 9999px;
+                cursor: pointer;
+                outline: none;
+                text-decoration: none;
+                transition-duration: 0.5s;
+                transition-delay: 0s;
+                transition-timing-function: ease-out;
+            }
+            
+            .settings__item:hover, .settings__item.active {
+                box-shadow: 0 0 8px 4px hsla(var(--hue-color), 69%, 61%, 0.4);
+            }
+
+            .settings-close {
+                font-size: 1.5rem;
+                color: hsl(var(--hue-color), 69%, 61%);
+                position: absolute;
+                top: 1.5rem;
+                right: 2rem;
+                cursor: pointer;
+            }
+
+            .work__container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            @media (min-width: 576px) {
+                .work__container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            .work__item {
+                display: block;
+                margin-bottom: 1.5rem;
+            }
+
+            .work__image {
+                position: relative;
+                border-radius: 0.5rem;
+                margin-bottom: 2rem;
+                overflow: hidden;
+                box-shadow: 0px 11px 41px -11px rgba(9, 14, 52, 0.1);
+                cursor: pointer;
+            }
+
+            .work__image img {
+                display: block;
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+            }
+
+            .work__title a {
+                color: var(--title-color);
+                font-size: var(--h2-font-size);
+                line-height: 1.4;
+                font-weight: 600;
+                display: inline-block;
+                margin-bottom: 0.75rem;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-out;
+            }
+
+            .work__title a:hover {
+                color: var(--first-color);
+            }
+
+            @media (min-width: 540px) {
+                .work__title a {
+                    font-size: var(--h3-font-size);
+                }
+            }
+
+            .work__desc {
+                color: var(--text-color-light);
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+
+            .work__image-overlay {
+                opacity: 0;
+                visibility: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: hsla(var(--hue-color), 69%, 61%, 0.17);
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 0.5s;
+                transform: scaleY(0);
+                transform-origin: bottom center;
+            }
+
+            .work__image:hover .work__image-overlay {
+                opacity: 1;
+                visibility: visible;
+                transform: scaleY(1);
+            }
+
+            .work__image-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2.5rem;
+                height: 2.5rem;
+                background-color: var(--first-color);
+                color: #fff;
+                border-radius: 9999px;
+                transition-delay: 0s;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-out;
+            }
+
+            .work__image-link:hover {
+                background-color: var(--first-color-alt);
+            }
+
+            .pricing__card-container {
+                grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+            }
+
+            .pricing__card-box {
+                display: block;
+                position: relative;
+                background-color: var(--container-color);
+                padding: 2rem 1.75rem;
+                overflow: hidden;
+                border-radius: .25rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+                transition-duration: 0.3s;
+                -webkit-transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                -webkit-transition-timing-function: ease-in-out;
+            }
+
+            @media (min-width: 540px) {
+                .pricing__card-box {
+                    padding: 2rem 3rem;
+                }
+            }
+
+            .pricing__card-box:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            }
+
+            .pricing__card-box.popular {
+                background-color: hsla(var(--hue-color), 69%, 61%, 0.1);
+            }
+
+            body.dark-theme .pricing__card-box.popular {
+                background-color: hsla(var(--hue-color), 69%, 61%, 0.25);
+            }
+            
+            body.dark-theme .pricing__card-box.popular .pricing__card-list li {
+                color: var(--first-color-lighter);
+            }
+
+            body.dark-theme .pricing__card-box.popular .pricing__card-price {
+                color: var(--first-color-lighter);
+            }
+
+            .pricing__card-box.popular .pricing__card-price {
+                color: var(--first-color-alt);
+            }
+
+            .pricing__card-box.popular .pricing__card-list li {
+                color: var(--first-color-alt);
+            }
+
+            .pricing__card-header {
+                display: block;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .pricing__card-icon {
+                width: 44px;
+                height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+                background-color: hsla(var(--hue-color), 69%, 61%, 0.1);
+                color: var(--first-color);
+                line-height: 1;
+                border-radius: 9999px;
+                margin-bottom: 10px;
+            }
+
+            .pricing__card-icon i {
+                font-size: 24px;
+                line-height: 1;
+            }
+
+            .pricing__card-title {
+                font-size: var(--normal-font-size);
+                color: var(--first-color);
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+                line-height: 1.4;
+                font-weight: 500;
+            }
+
+            .pricing__card-price {
+                font-size: var(--big-font-size);
+                color: var(--title-color);
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+            .pricing__card-desc {
+                line-height: 1.8;
+                color: var(--text-color);
+                font-size: var(--small-font-size);
+            }
+            
+            .pricing__card-desc span {
+                display: block;
+            }
+
+            .pricing__card-box .pricing__card-button {
+                display: block;
+                text-align: center;
+                border: 1px solid var(--first-color);
+                background-color: transparent;
+                color: var(--first-color);
+                padding: 0.75rem 1rem;
+            }
+
+            .pricing__card-button:hover {
+                background-color: var(--first-color);
+                color: #fff;
+            }
+
+            .pricing__card-button:focus, .pricing__card-button:active {
+                background-color: var(--first-color-alt);
+            }
+
+            .pricing__card-body {
+                display: block;
+                margin: var(--mb-1-5) 0 0;
+            }
+
+            .pricing__card-list {
+                display: block;
+            }
+
+            .pricing__card-list li {
+                display: inline-flex;
+                width: 100%;
+                align-items: center;
+                width: 100%;
+                line-height: 1.6;
+                font-size: var(--normal-font-size);
+                margin-bottom: 8px;
+            }
+
+            .pricing__card-list li i {
+                margin-right: 0.75rem;
+                color: var(--first-color);
+                font-size: 1.25rem;
+                line-height: 1;
+            }
+
+            .cards__container {
+                grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+            }
+
+            .card {
+                display: block;
+                position: relative;
+                background-color: var(--container-color);
+                padding: 2rem;
+                overflow: hidden;
+                border-radius: .5rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+                transition-duration: 0.3s;
+                -webkit-transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                -webkit-transition-timing-function: ease-in-out;
+            }
+
+            .card:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            }
+            
+            .card__icon {
+                display: inline-block;
+                margin-bottom: var(--mb-1-5);
+                padding: 11px;
+                background-color: var(--first-color);
+                color: #fff;
+                width: 54px;
+                height: 54px;
+                border-radius: 0.75rem;
+            }
+
+            .card__icon i, .card__icon svg {
+                font-size: 32px;
+                width: 32px;
+                height: 32px;
+                line-height: 1;
+                display: inline-block;
+            }
+
+            .card__title {
+                display: block;
+                font-size: var(--h1-font-size);
+                line-height: 1.2;
+                margin-bottom: var(--mb-1);
+            }
+
+            .card__desc {
+                display: block;
+                font-size: var(--normal-font-size);
+                color: var(--text-color-light);
+                line-height: 1.5;
+            }
+
+            .contact2-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            @media (min-width: 768px) {
+                .contact2-container {
+                    grid-template-columns: 0.6fr 0.4fr;
+                }
+            }
+
+            .contact2-container.col-1 {
+                grid-template-columns: 1fr !important;
+            }
+
+            .contact2-image {
+                display: block;
+                height: 100%;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+
+            .contact2-image img {
+                height: 100%;
+                display: block;
+                width: 100%;
+                max-width: none;
+                object-fit: cover;
+                max-height: 300px;
+            }
+
+            @media (min-width: 768px) {
+                .contact2-image img {
+                    max-height: none;
+                }
+
+                .col-1 .contact2-image img {
+                    max-height: 300px;
+                }
+            }
+
+            .contact2__title, .contact2__subtitle {
+                text-align: left;
+            }
+
+            .contact2__subtitle {
+                margin-bottom: var(--mb-2-5);
+            }
+
+            .contact2__row {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                row-gap: 0;
+                column-gap: 2rem;
+            }
+            
+            .form__group {
+                display: block;
+                margin-bottom: var(--mb-1-5);
+            }
+
+            .form__label {
+                display: block;
+                font-family: inherit;
+                font-size: 14px;
+                line-height: 1.5;
+                letter-spacing: 0;
+                font-weight: normal;
+                color: var(--text-color);
+                margin-bottom: var(--mb-0-5);
+            }
+
+            .form__input {
+                display: flex;
+                align-items: center;
+                padding: 8px 12px;
+                margin: 0;
+                background-color: var(--container-color);
+                color: var(--title-color);
+                border-radius: 0.5rem;
+                border: 1px solid var(--text-color-light);
+                transition-duration: 0.5s;
+                transition-timing-function: ease-in-out;
+            }
+
+            .form__input:hover {
+                border-color: var(--text-color);
+            }
+
+            .form__input:focus-within {
+                border-color: var(--first-color);
+            }
+
+            .form__input i, .form__input svg {
+                display: inline-block;
+                line-height: 1;
+                font-size: 24px;
+                width: 24px;
+                height: 24px;
+                color: var(--text-color-light);
+                fill: currentColor;
+            }
+
+            .form__input > i:first-child, .form__input > svg:first-child {
+                margin-right: 10px;
+            }
+
+            .form__input > i:last-child, .form__input > svg:last-child {
+                margin-left: 10px;
+            }
+
+            .form__input input, .form__input textarea {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                resize: none;
+                font-size: var(--normal-font-size);
+                line-height: 1.6;
+                letter-spacing: 0;
+                font-weight: normal;
+                font-family: inherit;
+            }
+
+            .form__input.form__area {
+                padding: 18px;
+            }
+
+            .form__input.form__area input, .form__input.form__area textarea {
+                min-height: 150px;
+            }
+
+            .form__check {
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            .form__check:hover i, .form__check:hover svg {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .form__check:hover .form__check-mark {
+                background-color: rgba(0,0,0,.15);
+            }
+
+            .form__check:focus-within .form__check-mark {
+                border-color: var(--first-color);
+            }
+
+            .form__check input[type=checkbox], input[type=radio] {
+                border: none;
+                display: none;
+                outline: none;
+            }
+
+            input[type=checkbox]:checked ~ .form__check-mark, input[type=radio]:checked ~ .form__check-mark {
+                border-color: var(--first-color);
+            }
+
+            input[type=checkbox]:checked ~ .form__check-mark i, input[type=checkbox]:checked ~ .form__check-mark svg, input[type=radio]:checked ~ .form__check-mark i, input[type=radio]:checked ~ .form__check-mark svg {
+                opacity: 1;
+                visibility: visible;
+                color: var(--first-color);
+            }
+
+            .form__check:hover input[type=checkbox]:checked ~ .form__check-mark {
+                background-color: hsla(var(--hue-color), 69%, 61%, 0.1);
+            }
+
+            .form__check-mark {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 12px 0 0;
+                background-color: var(--white);
+                border: 1px solid var(--text-color);
+                border-radius: 10px;
+                padding: 5px;
+                transition-duration: 0.4s;
+                transition-timing-function: ease-out;
+            }
+
+            .form__check-mark i, .form__check-mark svg {
+                display: inline-block;
+                margin-top: 2px;
+                line-height: 1;
+                font-size: 22px;
+                width: 22px;
+                height: 22px;
+                color: var(--text-color-light);
+                fill: currentColor;
+                opacity: 0;
+                visibility: hidden;
+                transition-duration: 0.4s;
+                transition-timing-function: ease-out;
+            }
+
+            .form__check-label {
+                font-size: var(--normal-font-size);
+                line-height: 1.5;
+                letter-spacing: 0;
+                font-weight: normal;
+                font-family: inherit;
+                color: var(--title-color);
+            }
+
+            .form__button {
+                cursor: pointer;
+                padding: 12px 32px;
+                font-size: 1rem;
+                font-family: inherit;
+                letter-spacing: 0.02em;
+            }
+
+            .contact2__cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+                gap: 2rem;
+                margin-top: var(--mb-3);
+            }
+
+            .contact2__card {
+                display: block;
+                position: relative;
+                background-color: var(--container-color);
+                padding: 2rem;
+                overflow: hidden;
+                border-radius: .5rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+                transition-duration: 0.3s;
+                -webkit-transition-duration: 0.3s;
+                transition-timing-function: ease-in-out;
+                -webkit-transition-timing-function: ease-in-out;
+            }
+
+            .contact2__card:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            }
+            
+            .contact2__card-icon {
+                display: inline-block;
+                margin-bottom: var(--mb-1-5);
+                padding: 11px;
+                background-color: var(--first-color);
+                color: #fff;
+                width: 54px;
+                height: 54px;
+                border-radius: 0.75rem;
+                overflow: hidden;
+            }
+
+            .contact2__card-icon i, .contact2__card-icon svg {
+                font-size: 32px;
+                width: 32px;
+                height: 32px;
+                line-height: 1;
+                display: inline-block;
+            }
+
+            .contact2__title {
+                display: block;
+                font-size: var(--h1-font-size);
+                line-height: 1.2;
+                margin-bottom: var(--mb-1);
+            }
+
+            .contact2__desc {
+                display: block;
+                font-size: var(--normal-font-size);
+                color: var(--text-color-light);
+                line-height: 1.5;
+            }
+
+            .review__container {
+                position: relative;
+                display: block;
+                margin: 8rem 0 0;
+            }
+
+            .review__image {
+                position: absolute;
+                top: -76px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 152px;
+                height: 152px;
+                border-radius: 0.75rem;
+                overflow: hidden;
+                display: block;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+            }
+
+            .review__image img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .review__info {
+                display: block;
+                padding: 104px 36px 32px;
+                background-color: var(--container-color);
+                border-radius: 0.75rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+            }
+
+            .review__text {
+                font-size: var(--h2-font-size);
+                color: var(--title-color);
+                line-height: 1.4;
+                font-weight: var(--font-semi-bold);
+                margin-bottom: var(--mb-2);
+            }
+
+            .review__text span {
+                color: var(--first-color);
+            }
+
+            .review__meta {
+                display: block;
+                font-size: var(--normal-font-size);
+                line-height: 1.6;
+                font-family: inherit;
+                color: var(--title-color);
+                font-weight: normal;
+            }
+
+            .review__meta .job {
+                display: block;
+                color: var(--first-color);
+                font-size: var(--smaller-font-size);
+            }
+
+            @media (min-width: 640px) {
+                .review__container {
+                    margin: 0;
+                }
+
+                .review__image {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    width: 202px;
+                    height: 202px;
+                }
+
+                .review__info {
+                    padding: 64px 48px 64px 144px;
+                    margin-left: 101px;
+                }
+
+                .review__text {
+                    font-size: 1.5rem;
+                }
+
+                .review__meta {
+                    font-size: 18px;
+                }
+            }
+
+            .teaser__container {
+                grid-template-columns: 1fr;
+                gap: 0;
+                background-color: var(--container-color);
+                border-radius: 0.5rem;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+                transition-duration: 0.5s;
+                transition-timing-function: ease-out;
+            }
+
+            .teaser__container:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            }
+
+            .teaser__info {
+                padding: 1.5rem 2rem;
+            }
+
+            .teaser__image {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                order: -1;
+            }
+
+            .teaser__image img {
+                display: block;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .teaser__title {
+                display: block;
+                font-size: var(--h1-font-size);
+                line-height: 1.2;
+                color: var(--title-color);
+                margin-bottom: var(--mb-1);
+            }
+
+            .teaser__title span {
+                color: var(--first-color);
+            }
+
+            .teaser__desc {
+                display: block;
+                color: var(--text-color);
+                font-size: var(--small-font-size);
+                line-height: 1.5;
+                margin-bottom: var(--mb-2);
+            }
+
+            @media (min-width: 540px) {
+                .teaser__container {
+                    grid-template-columns: 0.6fr 0.4fr;
+                }
+
+                .teaser__image {
+                    order: 1;
+                }
+
+                .teaser__info {
+                    padding: 2rem 3rem;
+                }
+            }
+
+            .faq__container {
+                grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+                gap: 2rem;
+                align-items: flex-start;
+            }
+
+            .faq__item {
+                --faq-scrollHeight: 200px;
+                display: block;
+                background-color: var(--container-color);
+                border-radius: 0.5rem;
+                overflow: hidden;
+                margin: 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,.15);
+                transition-duration: 0.5s;
+                transition-timing-function: ease;
+            }
+
+            .faq__item:hover {
+                box-shadow: 0 4px 8px rgba(0,0,0,.15);
+            }
+
+            .faq__header {
+                display: flex;
+                align-items: center;
+                padding: 24px 32px;
+                cursor: pointer;
+            }
+
+            .faq__header:hover .faq__icon i {
+                color: var(--first-color-lighter);
+            }
+
+            .faq__icon {
+                display: inline-block;
+                font-size: 32px;
+                width: 32px;
+                height: 32px;
+                overflow: hidden;
+                line-height: 1;
+                margin-right: 16px;
+                padding: 0;
+                color: var(--text-color-light);
+            }
+
+            .faq__icon i {
+                font-size: 32px;
+                line-height: 1;
+                display: inline-block;
+                transition-duration: 0.4s;
+                transition-timing-function: ease;
+                transform-origin: center;
+            }
+
+            .faq__title {
+                color: var(--title-color);
+            }
+
+            .faq__body {
+                height: 100%;
+                max-height: 0;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-out;
+            }
+
+            .faq__info {
+                padding: 0 32px 32px 80px;
+                font-weight: normal;
+            }
+
+            .faq__item.opened > .faq__body {
+                max-height: var(--faq-scrollHeight);
+            }
+
+            .faq__item.opened .faq__icon i {
+                transform: rotate(180deg);
+                color: var(--first-color-lighter);
+            }
+        </style>
+    </head>
+    <body>
+        <!--==================== PRELOADER ====================-->
+        <div class="preloader">
+            <div class="loader">
+                <div class="outer"></div>
+                <div class="middle"></div>
+                <div class="inner"></div>
+            </div>
+        </div>
+
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">ANardini</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list grid">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                <i class="uil uil-estate nav__icon"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class="uil uil-user nav__icon"></i> About
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">
+                                <i class="uil uil-file-alt nav__icon"></i> Skills
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#services" class="nav__link">
+                                <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#portfolio" class="nav__link">
+                                <i class="uil uil-scenery nav__icon"></i> Portfolio
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">
+                                <i class="uil uil-message nav__icon"></i> Contact
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="uil uil-moon change-theme" id="theme-button" style="margin-right: var(--mb-1);"></i>
+                    <i class="uil uil-setting change-theme" id="setting-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="uil uil-apps"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <noscript class="alert-noscript">
+            <div>
+                You need to enable JavaScript to run this website!
+            </div>
+        </noscript>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+
+            <section class="settings-panel">
+                <i class="uil uil-times settings-close" id="setting-close"></i>
+                <div>
+                    <h2 class="settings__title">Settings</h2>
+                    <span class="settings__subtitle">Want to play around with our colours. Feel free!</span>
+                </div>
+
+                <div class="settings__grid grid">
+                    <button class="settings__item" style="--hue-color: 0;" data-hue="0"></button>
+                    <button class="settings__item" style="--hue-color: 25;" data-hue="25"></button>
+                    <button class="settings__item" style="--hue-color: 50;" data-hue="50"></button>
+                    <button class="settings__item" style="--hue-color: 75;" data-hue="75"></button>
+                    <button class="settings__item" style="--hue-color: 100;" data-hue="100"></button>
+                    <button class="settings__item" style="--hue-color: 125;" data-hue="125"></button>
+                    <button class="settings__item" style="--hue-color: 150;" data-hue="150"></button>
+                    <button class="settings__item" style="--hue-color: 175;" data-hue="175"></button>
+                    <button class="settings__item" style="--hue-color: 200;" data-hue="200"></button>
+                    <button class="settings__item" style="--hue-color: 225;" data-hue="225"></button>
+                    <button class="settings__item" style="--hue-color: 250;" data-hue="250"></button>
+                    <button class="settings__item" style="--hue-color: 275;" data-hue="275"></button>
+                    <button class="settings__item" style="--hue-color: 300;" data-hue="300"></button>
+                    <button class="settings__item" style="--hue-color: 325;" data-hue="325"></button>
+                    <button class="settings__item" style="--hue-color: 350;" data-hue="350"></button>
+                </div>
+            </section>
+            
+            <!--==================== BANNER ====================-->
+            <section class="banner">
+                <div class="container">
+                    <h1 class="banner__title">Pricing & Banner Test Page</h1>
+                    <span class="banner__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </div>
+            </section>
+            
+            <!--==================== PRICING 2 ====================-->
+            <section class="section pricing__card">
+                <h2 class="section__title">Pricing</h2>
+                <span class="section__subtitle">See our pricing options</span>
+
+                <div class="pricing__card-container container grid">
+                    <div class="pricing__card-box">
+                        <header class="pricing__card-header">
+                            <div class="pricing__card-icon">
+                                <i class="uil uil-browser"></i>
+                            </div>
+                            <h5 class="pricing__card-title">Basic</span>
+                            <h3 class="pricing__card-price">£250</h3>
+                            <p class="pricing__card-desc">
+                                <span>Per month.</span>
+                                <span>Billed annually.</span>
+                            </p>
+                        </header>
+
+                        <a href="#" class="button pricing__card-button">
+                            Start Now
+                        </a>
+
+                        <div class="pricing__card-body">
+                            <ul class="pricing__card-list">
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Static Website
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Domain Name Management
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Animation
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Bespoke Design
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Other stuff
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing__card-box popular">
+                        <header class="pricing__card-header">
+                            <div class="pricing__card-icon">
+                                <i class="uil uil-browser"></i>
+                            </div>
+                            <h5 class="pricing__card-title">Starter</span>
+                            <h3 class="pricing__card-price">£500</h3>
+                            <p class="pricing__card-desc">
+                                <span>Per month.</span>
+                                <span>Billed annually.</span>
+                            </p>
+                        </header>
+
+                        <a href="#" class="button pricing__card-button">Start Now</a>
+
+                        <div class="pricing__card-body">
+                            <ul class="pricing__card-list">
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Static Website
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Domain Name Management
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Animation
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Bespoke Design
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Other stuff
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing__card-box">
+                        <header class="pricing__card-header">
+                            <div class="pricing__card-icon">
+                                <i class="uil uil-browser"></i>
+                            </div>
+                            <h5 class="pricing__card-title">Pro</span>
+                            <h3 class="pricing__card-price">£1,000</h3>
+                            <p class="pricing__card-desc">
+                                <span>Per month.</span>
+                                <span>Billed annually.</span>
+                            </p>
+                        </header>
+
+                        <a href="#" class="button pricing__card-button">Start Now</a>
+
+                        <div class="pricing__card-body">
+                            <ul class="pricing__card-list">
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Static Website
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Domain Name Management
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Animation
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Bespoke Design
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Other stuff
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pricing__card-box">
+                        <header class="pricing__card-header">
+                            <div class="pricing__card-icon">
+                                <i class="uil uil-browser"></i>
+                            </div>
+                            <h5 class="pricing__card-title">Enterprise</span>
+                            <h3 class="pricing__card-price">£3,000</h3>
+                            <p class="pricing__card-desc">
+                                <span>Per month.</span>
+                                <span>Billed annually.</span>
+                            </p>
+                        </header>
+
+                        <a href="#" class="button pricing__card-button">Start Now</a>
+
+                        <div class="pricing__card-body">
+                            <ul class="pricing__card-list">
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Static Website
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Domain Name Management
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Animation
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Bespoke Design
+                                </li>
+                                <li>
+                                    <i class="uil uil-check-circle"></i>
+                                    Other stuff
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== SERVICES ====================-->
+            <section class="services section" id="services">
+                <h2 class="section__title">Services</h2>
+                <span class="section__subtitle">What i offer</span>
+
+                <div class="services__container container grid">
+                    <!--==================== SERVICES 1 ====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-web-grid services__icon"></i>
+                            <h3 class="services__title">Frontend <br> Developer</h3>
+                        </div>
+
+                        <span class="button button--flex button--small button--link services__button">
+                            View More
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title">Frontend <br> Developer</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Responsive Design</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Bespoke, Handcrafted design and code</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Simple clean design and construction</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Browser Compatible</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--==================== SERVICES 2 ====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-arrow services__icon"></i>
+                            <h3 class="services__title">Backend <br> Developer</h3>
+                        </div>
+                    
+                        <span class="button button--flex button--small button--link services__button">
+                            View More
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </span>
+                    
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title">Backend <br> Developer</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+                    
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p><strong>Languages:</strong> Javascript, Python, PHP</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p><strong>Frameworks:</strong> Django, Express, Flask</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p><strong>Operating System:</strong> Apple, Linux, Windows</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--==================== SERVICES 3 ====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-headphones-alt services__icon"></i>
+                            <h3 class="services__title">IT <br> Support</h3>
+                        </div>
+                    
+                        <span class="button button--flex button--small button--link services__button">
+                            View More
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </span>
+                    
+                        <div class="services__modal">
+                            <div class="services__modal-content">
+                                <h4 class="services__modal-title">IT <br> Support</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+                    
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Flexible meeting times and places</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Certified Apple Teacher</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Vast Apple, Windows and Android experience</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== WORK ====================-->
+            <section class="section work">
+                <h2 class="section__title">My Work</h2>
+                <span class="section__subtitle">What I have done.</span>
+
+                <div class="work__container container grid">
+                    <div class="work__item">
+                        <div class="work__image">
+                            <img src="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" alt="#" />
+                            <div class="work__image-overlay">
+                                <a href="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" class="work__image-link">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work__info">
+                            <h3 class="work__title">
+                                <a href="#">
+                                    Website Development
+                                </a>
+                            </h3>
+                            <p class="work__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, officia.</p>
+                        </div>
+                    </div>
+                    <div class="work__item">
+                        <div class="work__image">
+                            <img src="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" alt="#" />
+                            <div class="work__image-overlay">
+                                <a href="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" class="work__image-link">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work__info">
+                            <h3 class="work__title">
+                                <a href="#">
+                                    Website Development
+                                </a>
+                            </h3>
+                            <p class="work__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, officia.</p>
+                        </div>
+                    </div>
+                    <div class="work__item">
+                        <div class="work__image">
+                            <img src="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" alt="#" />
+                            <div class="work__image-overlay">
+                                <a href="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" class="work__image-link">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work__info">
+                            <h3 class="work__title">
+                                <a href="#">
+                                    Website Development
+                                </a>
+                            </h3>
+                            <p class="work__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, officia.</p>
+                        </div>
+                    </div>
+                    <div class="work__item">
+                        <div class="work__image">
+                            <img src="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" alt="#" />
+                            <div class="work__image-overlay">
+                                <a href="https://portfolio-tailwind.preview.uideck.com/demos/agency/images/portfolio/portfolio-01.jpg" class="work__image-link">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="work__info">
+                            <h3 class="work__title">
+                                <a href="#">
+                                    Website Development
+                                </a>
+                            </h3>
+                            <p class="work__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, officia.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== CARDS ====================-->
+            <section class="section cards">
+                <h2 class="section__title">Cards</h2>
+                <span class="section__subtitle">Variety of website cards.</span>
+
+                <div class="cards__container container grid">
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__icon">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.3334 8.66671V14C19.3334 15.964 20.9254 17.556 22.8894 17.556C24.8534 17.556 26.4454 15.964 26.4454 14V14.0014C26.4454 7.12804 20.8734 1.55737 14.0014 1.55737C7.12937 1.55737 1.55737 7.12937 1.55737 14.0014C1.55737 20.8734 7.12671 26.4467 14 26.4467C17.436 26.4467 20.548 25.0534 22.8 22.8014M19.3334 14.0014C19.3334 16.9469 16.9456 19.3347 14 19.3347C11.0545 19.3347 8.66671 16.9469 8.66671 14.0014C8.66671 11.0559 11.0545 8.66804 14 8.66804C16.9456 8.66804 19.3334 11.0559 19.3334 14.0014Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">
+                                Card Title
+                            </h3>
+                            <p class="card__desc">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam dolore quidem voluptatibus libero amet quaerat maxime eum optio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__icon">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.3334 8.66671V14C19.3334 15.964 20.9254 17.556 22.8894 17.556C24.8534 17.556 26.4454 15.964 26.4454 14V14.0014C26.4454 7.12804 20.8734 1.55737 14.0014 1.55737C7.12937 1.55737 1.55737 7.12937 1.55737 14.0014C1.55737 20.8734 7.12671 26.4467 14 26.4467C17.436 26.4467 20.548 25.0534 22.8 22.8014M19.3334 14.0014C19.3334 16.9469 16.9456 19.3347 14 19.3347C11.0545 19.3347 8.66671 16.9469 8.66671 14.0014C8.66671 11.0559 11.0545 8.66804 14 8.66804C16.9456 8.66804 19.3334 11.0559 19.3334 14.0014Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">
+                                Card Title
+                            </h3>
+                            <p class="card__desc">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam dolore quidem voluptatibus libero amet quaerat maxime eum optio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__info">
+                            <h3 class="card__title">
+                                Card Title
+                            </h3>
+                            <p class="card__desc">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam dolore quidem voluptatibus libero amet quaerat maxime eum optio.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__icon">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.3334 8.66671V14C19.3334 15.964 20.9254 17.556 22.8894 17.556C24.8534 17.556 26.4454 15.964 26.4454 14V14.0014C26.4454 7.12804 20.8734 1.55737 14.0014 1.55737C7.12937 1.55737 1.55737 7.12937 1.55737 14.0014C1.55737 20.8734 7.12671 26.4467 14 26.4467C17.436 26.4467 20.548 25.0534 22.8 22.8014M19.3334 14.0014C19.3334 16.9469 16.9456 19.3347 14 19.3347C11.0545 19.3347 8.66671 16.9469 8.66671 14.0014C8.66671 11.0559 11.0545 8.66804 14 8.66804C16.9456 8.66804 19.3334 11.0559 19.3334 14.0014Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="card__title">
+                                Card Title
+                            </h3>
+                            <p class="card__desc">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam dolore quidem voluptatibus libero amet quaerat maxime eum optio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== REVIEWS ====================-->
+            <section class="section reviews">
+                <h2 class="section__title">Reviews</h2>
+                <span class="section__subtitle">What my clients think of me.</span>
+
+                <div class="container">
+                    <div class="review__container">
+                        <div class="review__image">
+                            <img src="/assets/img/about.png" alt="#" />
+                        </div>
+                        <div class="review__info">
+                            <div class="review__data">
+                                <p class="review__text">
+                                    <span>"</span>Rombo is a game changer. This simple and <span>super efficient</span> UI 
+                                    kit boosted our design workflow a lot. Just buy it and see for yourself.<span>"</span>
+                                </p>
+                                <h4 class="review__meta">
+                                    <span class="name">Antonio Nardini</span>
+                                    <span class="job">Lead Develop @Company</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== TEASER ====================-->
+            <section class="section teaser">
+                <div class="teaser__container container grid">
+                    <div class="teaser__info">
+                        <h2 class="teaser__title">Bring teaser sections to the <span>next level.</span></h2>
+                        <p class="teaser__desc">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
+                        <a href="#" class="button button--small">Button</a>
+                    </div>
+                    <div class="teaser__image">
+                        <img src="/assets/img/portfolio2.jpg" alt="#" />
+                    </div>
+                </div>
+            </section>
+            
+            <!--==================== FAQ ====================-->
+            <section class="section faq">
+                <h2 class="section__title">FAQ</h2>
+                <span class="section__subtitle">Any questions? Answered.</span>
+
+                <div class="faq__container container grid">
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <header class="faq__header">
+                            <div class="faq__icon">
+                                <i class="uil uil-angle-down"></i>
+                            </div>
+                            <h3 class="faq__title">This is a question?</h3>
+                        </header>
+                        <div class="faq__body">
+                            <div class="faq__info">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum pariatur sequi velit dignissimos quia doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== CONTACT ====================-->
+            <section class="section contact2">
+                <div class="contact2-container col-1 container grid">
+                    <div>
+                        <h2 class="section__title contact2__title">Contact Us</h2>
+                        <span class="section__subtitle contact2__subtitle">Feel free to contact us.</span>
+
+                        <form>
+                            <div class="contact2__row grid">
+                                <div class="form__group">
+                                    <label for="first" class="form__label">First Name</label>
+                                    <div class="form__input">
+                                        <i class="uil uil-user"></i>
+                                        <input type="text" name="first" id="first" placeholder="First Name" />
+                                    </div>
+                                </div>
+                                <div class="form__group">
+                                    <label for="last" class="form__label">Last Name</label>
+                                    <div class="form__input">
+                                        <i class="uil uil-user"></i>
+                                        <input type="text" name="last" id="last" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email</label>
+                                <div class="form__input">
+                                    <i class="uil uil-envelope"></i>
+                                    <input type="email" name="email" id="email" placeholder="Email Address" />
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Phone Number</label>
+                                <div class="form__input">
+                                    <i class="uil uil-phone"></i>
+                                    <input type="tel" name="phone" id="phone" placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="msg" class="form__label">Message</label>
+                                <div class="form__input form__area">
+                                    <textarea name="msg" id="msg" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="check" class="form__check">
+                                    <input type="checkbox" name="check" id="check" />
+                                    <span class="form__check-mark">
+                                        <i class='uil uil-check-circle'></i>
+                                    </span>
+                                    <div class="form__check-label">I agree with your amazing privacy policy.</div>
+                                </label>
+                            </div>
+                            <div class="form__group">
+                                <button class="button form__button" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <div class="contact2-image">
+                            <img src="/assets/img/portfolio1.jpg" alt="#" />
+                        </div>
+                    </div>
+                </div>
+                <div class="contact2__cards-container container grid">
+                    <div class="contact2__card">
+                        <div class="contact2__card-info">
+                            <div class="contact2__card-icon">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.3334 8.66671V14C19.3334 15.964 20.9254 17.556 22.8894 17.556C24.8534 17.556 26.4454 15.964 26.4454 14V14.0014C26.4454 7.12804 20.8734 1.55737 14.0014 1.55737C7.12937 1.55737 1.55737 7.12937 1.55737 14.0014C1.55737 20.8734 7.12671 26.4467 14 26.4467C17.436 26.4467 20.548 25.0534 22.8 22.8014M19.3334 14.0014C19.3334 16.9469 16.9456 19.3347 14 19.3347C11.0545 19.3347 8.66671 16.9469 8.66671 14.0014C8.66671 11.0559 11.0545 8.66804 14 8.66804C16.9456 8.66804 19.3334 11.0559 19.3334 14.0014Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact2__title">Email us</h3>
+                            <p class="contact2__desc">You can easily reach us via email at: <a href="#">contact@antonionardini.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact2__card">
+                        <div class="contact2__card-info">
+                            <div class="contact2__card-icon">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.1827 1.63338C22.2561 1.63338 26.3681 5.74538 26.3681 10.8187M17.1827 6.35338C19.6481 6.35338 21.6481 8.35205 21.6481 10.8187M10.8081 17.1534C12.0081 18.304 13.4147 19.24 14.9694 19.904L15.6614 20.1987L17.7881 18.0387C18.3161 17.5027 19.0801 17.2707 19.8174 17.4254L24.9694 18.504C25.8414 18.6894 26.4641 19.4587 26.4641 20.3494V24.0587C26.4641 25.3854 25.3894 26.46 24.0627 26.46H22.9227C17.6774 26.46 12.5014 24.7227 8.58673 21.232C8.26406 20.9454 7.95073 20.648 7.64539 20.344L7.69473 20.3934C7.38939 20.088 7.09339 19.7747 6.80673 19.452C3.31473 15.5387 1.57739 10.3627 1.57739 5.11738V3.97738C1.57739 2.65072 2.65206 1.57605 3.97873 1.57605H7.68806C8.57873 1.57605 9.34806 2.19872 9.53339 3.07072L10.6134 8.22272C10.7667 8.95872 10.5361 9.72405 10.0001 10.252L7.84006 12.3787L8.13473 13.0707C8.79873 14.624 9.65606 15.9534 10.8081 17.1534Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3 class="contact2__title">Call us</h3>
+                            <p class="contact2__desc">You can easily reach us via phone at: <a href="#">+44 7899 743854</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__bg">
+                <div class="footer__container container grid">
+                    <div>
+                        <h1 class="footer__title">ANardini</h1>
+                        <span class="footer__subtitle">Full stack developer</span>
+                    </div>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#services" class="footer__link">Services</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="footer__link">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer__link">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/tio.nardini/" target="_blank" rel="noopener noreferrer" class="footer__social">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/al_nardini/" target="_blank" rel="noopener noreferrer" class="footer__social">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                        <a href="https://t.me/ANardini" target="_blank" rel="noopener noreferrer" class="footer__social">
+                            <i class="uil uil-telegram-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__container-bottom container">
+                    <div>
+                        <p class="footer__copy">Antonio Nardini &copy; 2021</p>
+                    </div>
+                    <div>
+                        <ul class="footer__links">
+                            <li>
+                                <a href="/privacy/" class="footer__link">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="/terms/" class="footer__link">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            
+        </footer>
+
+        <!--==================== PRELOADER JS ====================-->
+        <script src="https://cdn.antonionardini.com/anardini/js/preloader.min.js"></script>
+
+        <!--==================== MODERNIZR JS =====================-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <!--==================== ALL JS ====================-->
+        <script src="https://cdn.antonionardini.com/anardini/js/all.min.js"></script>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                /*===== SETTINGS JS =====*/
+                let root = document.querySelector(':root');
+                let items = document.querySelectorAll('.settings__item');
+                let settingsOpen = document.querySelector('#setting-button');
+                let settingsClose = document.querySelector('#setting-close');
+                let settingsPanel = document.querySelector('.settings-panel');
+                let currentColor = getComputedStyle(root).getPropertyValue('--hue-color');
+
+                document.querySelector(`[data-hue="${currentColor}"]`).classList.add('active');
+
+                function toggleSettingPanel() {
+                    settingsPanel.classList.toggle('opened');
+                }
+
+                settingsOpen.addEventListener('click', toggleSettingPanel);
+                settingsClose.addEventListener('click', toggleSettingPanel);
+
+                items.forEach(item => {
+                    item.addEventListener('click', () => {
+                        root.style.setProperty('--hue-color', item.getAttribute('data-hue'));
+                        items.forEach(i => i.classList.remove("active"));
+                        item.classList.add("active");
+                    });
+                });
+
+                /*===== FAQ JS =====*/
+                let faqs = document.querySelectorAll('.faq__item');
+                faqs.forEach((faq, index) => {
+                    let faqHeader = faq.querySelector('.faq__header');
+                    let faqBody = faq.querySelector('.faq__body');
+                    faqBody.style.setProperty('--faq-scrollHeight', faqBody.scrollHeight + "px");
+
+                    faqHeader.addEventListener('click', () => {
+                        faq.classList.toggle('opened');
+                    });
+                })
+            });
+        </script>
+    </body>
+</html>

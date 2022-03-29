@@ -34,7 +34,7 @@
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
-    --h2-font-size: 1,25rem;
+    --h2-font-size: 1.25rem;
     --h3-font-size: 1.125rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
@@ -470,6 +470,7 @@ img {
     -webkit-transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     -webkit-transition-timing-function: ease-in-out;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -483,6 +484,8 @@ img {
     -webkit-transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     -webkit-transition-timing-function: ease-in-out;
+    transition-property: transform;
+    -webkit-transition-property: transform;
 }
 
 .button--white {

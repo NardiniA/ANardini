@@ -847,7 +847,13 @@
                         </div>
                     </div>
 
-                    <form class="contact__form grid" method="POST">
+                    <form class="contact__form grid" method="POST" action="https://formpost.app/contact@antonionardini.com">
+                        <input type="hidden" name="fp_redirect" value="https://antonionardini.com/thank-you" />
+                        <input type="hidden" name="fp_subject" value="ANardini Website Contact Submission" />
+                        <input type="hidden" name="fp_reply" value="true" />
+                        <input type="hidden" name="fp_reply_message" value="Thank you for contacting us, we will be in touch shortly." />
+                        <input type="hidden" name="fp_reply_from" value="Antonio Nardini" />
+
                         <div class="alert">
                             <span>Hello</span>
                             <i class="uil uil-times alert__button"></i>
@@ -988,8 +994,5 @@
 
         <!--==================== ALL JS ====================-->
         <script src="https://cdn.antonionardini.com/anardini/js/all.min.js"></script>
-
-        <!--==================== CONTACT JS ====================-->
-        <script async src="https://cdn.antonionardini.com/anardini/js/contact.min.js"></script>
     </body>
 </html>

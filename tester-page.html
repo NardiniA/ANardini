@@ -61,6 +61,17 @@
         <title>Antonio Nardini - Full Stack Developer</title>
 
         <style>
+            a {
+                color: var(--first-color);
+                text-decoration: none;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-out;
+            }
+
+            a:hover {
+                color: var(--first-color-alt);
+            }
+
             .banner {
                 padding: 100px 0 80px;
                 background-color: var(--first-color);
@@ -313,7 +324,7 @@
             }
 
             .pricing__card-box.popular .pricing__card-list li {
-                color: var(--first-color-alt);
+                color: var(--title-color);
             }
 
             .pricing__card-header {
@@ -507,7 +518,8 @@
                 }
             }
 
-            .contact2__title, .contact2__subtitle {
+            .contact2__title, 
+            .contact2__subtitle {
                 text-align: left;
             }
 
@@ -558,7 +570,8 @@
                 border-color: var(--first-color);
             }
 
-            .form__input i, .form__input svg {
+            .form__input i, 
+            .form__input svg {
                 display: inline-block;
                 line-height: 1;
                 font-size: 24px;
@@ -568,15 +581,18 @@
                 fill: currentColor;
             }
 
-            .form__input > i:first-child, .form__input > svg:first-child {
+            .form__input > i:first-child, 
+            .form__input > svg:first-child {
                 margin-right: 10px;
             }
 
-            .form__input > i:last-child, .form__input > svg:last-child {
+            .form__input > i:last-child, 
+            .form__input > svg:last-child {
                 margin-left: 10px;
             }
 
-            .form__input input, .form__input textarea {
+            .form__input input, 
+            .form__input textarea {
                 border: none;
                 background-color: transparent;
                 outline: none;
@@ -587,6 +603,7 @@
                 height: 100%;
                 resize: none;
                 font-size: var(--normal-font-size);
+                color: var(--title-color);
                 line-height: 1.6;
                 letter-spacing: 0;
                 font-weight: normal;
@@ -597,7 +614,8 @@
                 padding: 18px;
             }
 
-            .form__input.form__area input, .form__input.form__area textarea {
+            .form__input.form__area input, 
+            .form__input.form__area textarea {
                 min-height: 150px;
             }
 
@@ -608,7 +626,8 @@
                 cursor: pointer;
             }
 
-            .form__check:hover i, .form__check:hover svg {
+            .form__check:hover i, 
+            .form__check:hover svg {
                 opacity: 1;
                 visibility: visible;
             }
@@ -621,23 +640,29 @@
                 border-color: var(--first-color);
             }
 
-            .form__check input[type=checkbox], input[type=radio] {
+            .form__check input[type=checkbox], 
+            .form__check input[type=radio] {
                 border: none;
                 display: none;
                 outline: none;
             }
 
-            input[type=checkbox]:checked ~ .form__check-mark, input[type=radio]:checked ~ .form__check-mark {
+            input[type=checkbox]:checked ~ .form__check-mark, 
+            input[type=radio]:checked ~ .form__check-mark {
                 border-color: var(--first-color);
             }
 
-            input[type=checkbox]:checked ~ .form__check-mark i, input[type=checkbox]:checked ~ .form__check-mark svg, input[type=radio]:checked ~ .form__check-mark i, input[type=radio]:checked ~ .form__check-mark svg {
+            input[type=checkbox]:checked ~ .form__check-mark i, 
+            input[type=checkbox]:checked ~ .form__check-mark svg, 
+            input[type=radio]:checked ~ .form__check-mark i, 
+            input[type=radio]:checked ~ .form__check-mark svg {
                 opacity: 1;
                 visibility: visible;
                 color: var(--first-color);
             }
 
-            .form__check:hover input[type=checkbox]:checked ~ .form__check-mark {
+            .form__check:hover input[type=checkbox]:checked ~ .form__check-mark,
+            .form__check:hover input[type=radio]:checked ~ .form__check-mark {
                 background-color: hsla(var(--hue-color), 69%, 61%, 0.1);
             }
 
@@ -654,7 +679,8 @@
                 transition-timing-function: ease-out;
             }
 
-            .form__check-mark i, .form__check-mark svg {
+            .form__check-mark i, 
+            .form__check-mark svg {
                 display: inline-block;
                 /* margin-top: 2px; */
                 line-height: 1;
@@ -1706,6 +1732,26 @@
                                     </span>
                                     <div class="form__check-label">I agree with your amazing privacy policy.</div>
                                 </label>
+                            </div>
+                            <div class="contact2__row grid">
+                                <div class="form__group">
+                                    <label for="yes" class="form__check">
+                                        <input type="radio" name="radio" id="yes" />
+                                        <span class="form__check-mark">
+                                            <i class='uil uil-check'></i>
+                                        </span>
+                                        <div class="form__check-label">Yes</div>
+                                    </label>
+                                </div>
+                                <div class="form__group">
+                                    <label for="no" class="form__check">
+                                        <input type="radio" name="radio" id="no" />
+                                        <span class="form__check-mark">
+                                            <i class='uil uil-check'></i>
+                                        </span>
+                                        <div class="form__check-label">No</div>
+                                    </label>
+                                </div>
                             </div>
                             <div class="form__group">
                                 <button class="button form__button" type="submit">Send</button>
